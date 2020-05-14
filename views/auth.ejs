@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+                <div class="jumbotron">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#login" role="tab"
+                                aria-controls="home" aria-selected="true">LOGIN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#register" role="tab"
+                                aria-controls="profile" aria-selected="false">REGISTER</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="jumbotron">
+                                <% if(lmessage.length > 0) { %>
+                                <div class="alert alert-danger"><%= lmessage %></div>
+                                <% } %>
+                                <form action="/apis/login" method="POST" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label for="username"><i class="fa fa-envelope"></i> Email address/
+                                            Username</label>
+                                        <input type="text" class="form-control" id="username" name="username"
+                                            aria-describedby="emailHelp">
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email
+                                            with
+                                            anyone
+                                            else.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password"><i class="fas fa-lock"></i> Password</label>
+                                        <input type="password" class="form-control" id="password" name="password"
+                                            placeholder="">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>
+                                        LOGIN</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="jumbotron">
+                                <% if(smessage.length > 0) { %>
+                                <div class="alert alert-danger"><%= smessage %></div>
+                                <% } %>
+                                <form action="/apis/register" method="POST" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label for="username"><i class="fa fa-envelope"></i> Email address/
+                                            Username</label>
+                                        <input type="text" class="form-control" id="username" name="username"
+                                            aria-describedby="emailHelp">
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email
+                                            with
+                                            anyone
+                                            else.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password"><i class="fas fa-lock"></i> Password</label>
+                                        <input type="password" class="form-control" id="password" name="password">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>
+                                        REGISTER</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/1b86f0e672.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+        <!-- Favicon -->
+        <!-- <link rel="shortcut icon" href="public\img\xIcone.png" type="image/x-icon"> -->
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <header>
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarColor01">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/apis/profile">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/apis/logout">LOGOUT</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+    </div>
+    <!-- end header -->
+
+    <!-- Form -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="jumbotron">
+
+                    <form action="/apis/category/add" method="POST" enctype="multipart/form-data">
+
+                        <!-- Category -->
+                        <div class="form-group">
+                            <label class="col-form-label" for="category">Category</label>
+                            <input type="text" class="form-control" placeholder="category" id="category"
+                                name="category" required>
+                        </div>
+                        <!-- Button -->
+                        <button type="submit" class="btn btn-primary">Add +</button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- endForm -->
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/1b86f0e672.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
